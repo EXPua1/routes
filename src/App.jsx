@@ -4,7 +4,7 @@ import ReactDOM from "react-dom/client";
 import "modern-normalize";
 import "./index.css";
 import { Container, Section } from "./components";
-import { Home, About, Products, NotFound } from "./pages";
+import { Home, About, Products, NotFound, ProductDetails } from "./pages";
 
 const App = () => {
   return (
@@ -20,17 +20,17 @@ const App = () => {
             }}
           >
             <li>
-              <NavLink to="/" activeClassName="active">
+              <NavLink to="/" activeclassname="active">
                 Home
               </NavLink>
             </li>
             <li>
-              <NavLink to="/about" activeClassName="active">
+              <NavLink to="/about" activeclassname="active">
                 About
               </NavLink>
             </li>
             <li>
-              <NavLink to="/products" activeClassName="active">
+              <NavLink to="/products" activeclassname="active">
                 Products
               </NavLink>
             </li>
@@ -40,6 +40,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/products" element={<Products />} />
+          <Route path="/products/:productId" element={<ProductDetails />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Container>
